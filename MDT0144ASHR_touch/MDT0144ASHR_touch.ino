@@ -3,7 +3,7 @@
  *
  * Size/Type:       1.44"  TFT
  * Resolution:      128x128
- * Description:     TFT connected to a uC32 via an MCIB-12 and MPBV6 adaptor baords 
+ * Description:     TFT connected to a uC32 via an MCIB-12 and MPBV6 adaptor boards 
  *                  using 8-bit 8080 Parallel interface. In addition this display has 
  *                  a resistive touch panel (RTP), which the demo utilizes.
  *                  
@@ -19,7 +19,6 @@
 
 #include "display.h"
 
-//Variables
 unsigned char sdcard;
 char  file_names[50][13];
 int num_of_files; 
@@ -67,7 +66,6 @@ void setup()
    Init_ST7735S(); 
    
    SET_for_GRAPHICS();
-   //fill_screen(WHITE);
    fill_screen(MAGENTA);
 
    Serial.print("Checking... ");
@@ -374,7 +372,7 @@ void demo_page(unsigned int timeout)
    delay(100);
    //draw_rect(200, 100, 10, 110, ORANGE);
 
-   while(timeout--) {           //exit when time is out or touch detected
+   while(timeout--) {           //exit when time runs out or touch detected
       delay1++;
       delay2++;
       if(touch_detect()) {      //takes ~ 10ms
